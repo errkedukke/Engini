@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Entities\dl44rkbu.grf~" />
+  </ItemGroup>
+
 </Project>

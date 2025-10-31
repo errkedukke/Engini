@@ -14,6 +14,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Engini.Application\Engini.Application.csproj" />
 	  <ProjectReference Include="..\Engini.Domain\Engini.Domain.csproj" />
+	  <ProjectReference Include="..\Engini.Persistence\Engini.Persistence.csproj" />
 	</ItemGroup>
 
 </Project>

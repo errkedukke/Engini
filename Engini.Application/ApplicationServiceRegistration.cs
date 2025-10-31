@@ -17,6 +17,8 @@ public static class ApplicationServiceRegistration
             cfg.AddMaps(typeof(EnginiMappingProfile).Assembly);
         });
 
+        services.AddMediatR(x => x.RegisterServicesFromAssembly(executionAssembly));
+
         return services;
     }
 }

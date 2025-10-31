@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engini.Domain", "Engini.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engini.Application", "Engini.Application\Engini.Application.csproj", "{D0E2C726-0C9B-48E9-BCB3-21B2B51AA301}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engini.Persistence", "Engini.Persistence\Engini.Persistence.csproj", "{70556CFF-0885-45D7-81C6-B7EFAABD3E8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D0E2C726-0C9B-48E9-BCB3-21B2B51AA301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E2C726-0C9B-48E9-BCB3-21B2B51AA301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E2C726-0C9B-48E9-BCB3-21B2B51AA301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70556CFF-0885-45D7-81C6-B7EFAABD3E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70556CFF-0885-45D7-81C6-B7EFAABD3E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70556CFF-0885-45D7-81C6-B7EFAABD3E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70556CFF-0885-45D7-81C6-B7EFAABD3E8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{69860A34-5B8F-41A1-997C-9E500704C5DC} = {66CAEF3B-EDA8-4C93-A8AA-FA0FF0639216}
 		{8FE9F580-AC2F-4917-896E-B688BE6AA25F} = {61BCE6FB-71EA-414F-95E6-A47130E9C15D}
 		{D0E2C726-0C9B-48E9-BCB3-21B2B51AA301} = {61BCE6FB-71EA-414F-95E6-A47130E9C15D}
+		{70556CFF-0885-45D7-81C6-B7EFAABD3E8B} = {5F70895F-8B75-4B7F-A283-38B94AFA8CAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97C5E15C-7A4A-4ADD-9CE9-B38971FA5175}

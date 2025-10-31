@@ -1,4 +1,6 @@
 using Engini.Application.Features.Employee;
+using Engini.Application.Features.Employee.Queries.GetEmployees;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Engini.API.Controllers;
@@ -8,10 +10,12 @@ namespace Engini.API.Controllers;
 public sealed class EmployeeController : ControllerBase
 {
     private readonly ILogger<EmployeeController> _logger;
+    private readonly IMediator _mediator;
 
-    public EmployeeController(ILogger<EmployeeController> logger)
+    public EmployeeController(ILogger<EmployeeController> logger, IMediator mediator)
     {
         _logger = logger;
+        _mediator = mediator;
     }
 
     /// <summary>
@@ -26,7 +30,8 @@ public sealed class EmployeeController : ControllerBase
     {
         _logger.LogInformation("Fetching employee hierarchy for ID {Id}", id);
 
-        var employee = new EmployeeDto(); //await _service.ExecuteAsync(id, cancellationToken);
+        var query = new GetEmployeeQuery(id);
+        var employee = await _mediator.Send(query, cancellationToken);
 
         if (employee is null)
         {

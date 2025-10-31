@@ -1,6 +1,6 @@
 ﻿namespace Engini.Domain.Entities;
 
-public sealed class Employee
+public class Employee
 {
     public int Id { get; set; }
 

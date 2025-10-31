@@ -1,4 +1,4 @@
-using Engini.Domain.Entities;
+using Engini.Application.Features.Employee;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Engini.API.Controllers;
@@ -20,13 +20,13 @@ public sealed class EmployeeController : ControllerBase
     /// <param name="id">Root employee ID</param>
     /// <param name="cancellationToken">Request cancellation token</param>
     [HttpGet("{id:int}")]
-    [ProducesResponseType(typeof(Employee), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(EmployeeDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Get(int id, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Fetching employee hierarchy for ID {Id}", id);
 
-        var employee = new Employee(); //await _service.ExecuteAsync(id, cancellationToken);
+        var employee = new EmployeeDto(); //await _service.ExecuteAsync(id, cancellationToken);
 
         if (employee is null)
         {

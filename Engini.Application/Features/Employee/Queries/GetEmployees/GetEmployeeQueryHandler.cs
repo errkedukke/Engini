@@ -36,6 +36,7 @@ public sealed class GetEmployeeQueryHandler : IRequestHandler<GetEmployeeQuery, 
             return null;
         }
 
-        return _employeeService.BuildHierarchy(employee, employees);
+        var result = _employeeService.BuildHierarchy(employee, employees);
+        return result;
     }
 }

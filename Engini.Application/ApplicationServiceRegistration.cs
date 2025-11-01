@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Engini.Application.Contracts.Services;
+using Engini.Application.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -11,6 +13,7 @@ public static class ApplicationServiceRegistration
     {
         var executionAssembly = Assembly.GetExecutingAssembly();
         services.AddMediatR(x => x.RegisterServicesFromAssembly(executionAssembly));
+        services.AddTransient<IEmployeeService, EmployeeService>();
 
         return services;
     }

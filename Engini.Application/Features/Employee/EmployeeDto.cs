@@ -1,4 +1,6 @@
-﻿namespace Engini.Application.Features.Employee;
+﻿using System.Text.Json.Serialization;
+
+namespace Engini.Application.Features.Employee;
 
 public sealed record EmployeeDto
 {
@@ -8,5 +10,6 @@ public sealed record EmployeeDto
 
     public string Name { get; set; } = string.Empty;
 
+    [JsonInclude]
     public List<EmployeeDto> Subordinated = [];
 }

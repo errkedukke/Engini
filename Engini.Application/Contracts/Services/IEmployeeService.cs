@@ -5,5 +5,5 @@ namespace Engini.Application.Contracts.Services;
 
 public interface IEmployeeService
 {
-    EmployeeDto BuildHierarchy(Employee employee, IEnumerable<Employee> employees);
+    EmployeeDto BuildHierarchy(Employee employee, IReadOnlyList<Employee> employees);
 }

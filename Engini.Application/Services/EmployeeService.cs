@@ -16,6 +16,8 @@ public class EmployeeService : IEmployeeService
 
         var ancestors = new HashSet<int>();
 
+        return MapToDto(root);
+
         EmployeeDto MapToDto(Employee node)
         {
             var dto = new EmployeeDto
@@ -43,7 +45,5 @@ public class EmployeeService : IEmployeeService
             ancestors.Remove(node.Id);
             return dto;
         }
-
-        return MapToDto(root);
     }
 }

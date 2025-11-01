@@ -21,8 +21,8 @@ public sealed class GetEmployeeQueryHandler : IRequestHandler<GetEmployeeQuery, 
     public async Task<EmployeeDto> Handle(GetEmployeeQuery request, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Fetching employee with ID: {Id}", request.Id);
-
         var employee = await _employeeRepository.GetByIdAsync(request.Id, cancellationToken);
+
         var result = _mapper.Map<EmployeeDto>(employee);
 
         return result;

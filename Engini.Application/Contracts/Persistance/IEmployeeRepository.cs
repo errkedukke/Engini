@@ -4,5 +4,5 @@ namespace Engini.Application.Contracts.Persistance;
 
 public interface IEmployeeRepository
 {
-    Task<Employee> GetByIdAsync(int id, CancellationToken cancellationToken);
+    Task<IReadOnlyList<Employee>> GetByIdAsync(int id, CancellationToken cancellationToken);
 }

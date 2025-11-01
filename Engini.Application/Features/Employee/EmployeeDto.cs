@@ -8,5 +8,5 @@ public sealed record EmployeeDto
 
     public string Name { get; set; } = string.Empty;
 
-    public IReadOnlyList<EmployeeDto> Subordinated = [];
+    public List<EmployeeDto> Subordinated = [];
 }

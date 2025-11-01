@@ -9,9 +9,7 @@ public class EmployeeRepository : IEmployeeRepository
 {
     private IDbConnection _dbConnection;
     private readonly string RecursiveCte = @"
-        DECLARE @RootId INT = @Id;
-        
-        WITH Hirerachy AS (
+        WITH Hierarchy AS (
             SELECT  
                 Id, 
                 ManagerId, 
@@ -37,7 +35,8 @@ public class EmployeeRepository : IEmployeeRepository
             )
             SELECT Id, ManagerId, Name
             FROM Hierarchy
-            OPTION (MAXRECURSION 32767);";
+            OPTION (MAXRECURSION 32767);
+    ";
 
     public EmployeeRepository(IDbConnection dbConnection)
     {
@@ -46,7 +45,7 @@ public class EmployeeRepository : IEmployeeRepository
 
     public async Task<IReadOnlyList<Employee>> GetByIdAsync(int id, CancellationToken cancellationToken)
     {
-        var command = new CommandDefinition(RecursiveCte, new { cancellationToken });
+        var command = new CommandDefinition(RecursiveCte, new { RootId = id, MaxDepth = 4048, cancellationToken });
         var rows = await _dbConnection.QueryAsync<Employee>(command);
 
         return rows.AsList();

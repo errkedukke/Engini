@@ -1,5 +1,4 @@
-﻿using Engini.Application.MappingProfile;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -11,12 +10,6 @@ public static class ApplicationServiceRegistration
         IConfiguration configuration)
     {
         var executionAssembly = Assembly.GetExecutingAssembly();
-
-        services.AddAutoMapper(cfg =>
-        {
-            cfg.AddMaps(typeof(EnginiMappingProfile).Assembly);
-        });
-
         services.AddMediatR(x => x.RegisterServicesFromAssembly(executionAssembly));
 
         return services;
